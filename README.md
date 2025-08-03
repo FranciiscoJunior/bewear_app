@@ -96,4 +96,4 @@ Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](h
 
 
 ---
-⌨️ com ❤️ por [Armstrong Lohãns](https://github.com/FranciiscoJunior)
+⌨️ com ❤️ por [Francisco Júnior](https://github.com/FranciiscoJunior)
