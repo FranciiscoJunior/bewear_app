@@ -62,9 +62,14 @@ Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
 Mencione as ferramentas que você usou para criar seu projeto
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - O framework web usado
-* [Maven](https://maven.apache.org/) - Gerente de Dependência
-* [ROME](https://rometools.github.io/rome/) - Usada para gerar RSS
+* [React](https://react.dev/) - Tecnologia do Front-end mais utilizada;
+* [Node.Js] (https://nodejs.org/pt) - Tecnologia utilizada na parte de Back-end;
+* [Typescript] (https://www.typescriptlang.org/) - Tecnologia utilizada no Front-End;
+* [Next] (https://nextjs.org/) - O Framework React para a Web;
+* [PostgreSQL] (https://www.postgresql.org/) - Banco de dados SQL dos mais utilizado no mercado;
+* [Strype] (https://stripe.com/br) - API de pagamento integrada para fazer compras e pagamentos On-line;
+* [Shadcn] (https://ui.shadcn.com/) - A base para o seu sistema de design;
+* [Tailwind] (https://tailwindcss.com/) - Framework web utilizando para estilizar de forma rápida.
 
 ## 🖇️ Colaborando
 
