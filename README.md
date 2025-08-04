@@ -1,4 +1,4 @@
-## BEWEAR - APP - Loja Virtual decompras On-line
+## BEWEAR - APP - Loja Virtual de compras On-line
 
 Está documentação é referente os requisitos que permite, com que o usuário entenda o projeto e navegue através das funcionalidades de maneira intuitiva e com fácial adaptação.
 
@@ -58,18 +58,36 @@ Dar exemplos
 
 Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
+## 🗓️ Etapas de desenvolvimento do projeto
+
+* []
+* []
+* []
+* []
+* []
+* []
+
+## Requisitos funcionais presentes no sistema
+
+* []
+* []
+* []
+* []
+* []
+* []
+
 ## 🛠️ Construído com
 
-Mencione as ferramentas que você usou para criar seu projeto
+Tecmoçogias utilizadas no desenvolvimento do projeto, Front-End, Back-End e ferramentas:
 
 * [React](https://react.dev/) - Tecnologia do Front-end mais utilizada;
-* [Node.Js] (https://nodejs.org/pt) - Tecnologia utilizada na parte de Back-end;
-* [Typescript] (https://www.typescriptlang.org/) - Tecnologia utilizada no Front-End;
-* [Next] (https://nextjs.org/) - O Framework React para a Web;
-* [PostgreSQL] (https://www.postgresql.org/) - Banco de dados SQL dos mais utilizado no mercado;
-* [Strype] (https://stripe.com/br) - API de pagamento integrada para fazer compras e pagamentos On-line;
-* [Shadcn] (https://ui.shadcn.com/) - A base para o seu sistema de design;
-* [Tailwind] (https://tailwindcss.com/) - Framework web utilizando para estilizar de forma rápida.
+* [Node.Js](https://nodejs.org/pt) - Tecnologia utilizada na parte de Back-end;
+* [Typescript](https://www.typescriptlang.org/) - Tecnologia utilizada no Front-End;
+* [Next](https://nextjs.org/) - O Framework React para a Web;
+* [PostgreSQL](https://www.postgresql.org/) - Banco de dados SQL dos mais utilizado no mercado;
+* [Strype](https://stripe.com/br) - API de pagamento integrada para fazer compras e pagamentos On-line;
+* [Shadcn](https://ui.shadcn.com/) - A base para o seu sistema de design;
+* [Tailwind](https://tailwindcss.com/) - Framework web utilizando para estilizar de forma rápida.
 
 ## 🖇️ Colaborando
 
@@ -90,15 +108,13 @@ Você também pode ver a lista de todos os [colaboradores](https://github.com/us
 
 ## 📄 Licença
 
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
+Este projeto está sob a licença (LICENÇA MIT) - veja o arquivo [LICENSE.MIT](https://choosealicense.com/licenses/mit/) para detalhes.
 
 ## 🎁 Expressões de gratidão
 
 * Conte a outras pessoas sobre este projeto 📢;
 * Convide alguém da equipe para uma cerveja 🍺;
-* Um agradecimento publicamente 🫂;
-* etc.
-
+* Gratidão a Deus pela permissão de desenvolver e adquirir cada vem mais conhecimento prático, através do conhecimento contínuo! 🫂;
 
 ---
-⌨️ com ❤️ por [Francisco Júnior](https://github.com/FranciiscoJunior)
+⌨️ Desenvolvido com ❤️ por [Francisco Júnior](https://github.com/FranciiscoJunior)
