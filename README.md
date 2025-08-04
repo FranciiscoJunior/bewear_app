@@ -1,6 +1,6 @@
-## BEWEAR - APP - Loja Virtual de compras On-line
+## BEWEAR - APP - Loja Virtual de compras On-line de roupas masculinas e femininas
 
-Está documentação é referente os requisitos que permite, com que o usuário entenda o projeto e navegue através das funcionalidades de maneira intuitiva e com fácial adaptação.
+Está documentação é referente os requisitos que permite, com que o usuário entenda o projeto e navegue através das funcionalidades de maneira intuitiva e com fácial adaptação, consequentemente tenha uma boa experiência ao navegar pelo projeto e usar suas funções.
 
 ## 🚀 Começando
 
@@ -58,36 +58,38 @@ Dar exemplos
 
 Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
-## 🗓️ Etapas de desenvolvimento do projeto
+## 🗓️ Etapas de desenvolvimento do projeto:
 
-* []
-* []
-* []
-* []
-* []
-* []
+* [X] Setup do projeto e depenências iniciais;
+* [] Autenticação e tela inicial do projeto;
+* [] Catálogo de produtos;
+* [] Tela de produtos e carrinho de compras;
+* [] Integraçãocom stripe, Gatway de pagamanto;
+* [] Deploy do projeto para o Vercel, para o projeto ficar On-line.
 
-## Requisitos funcionais presentes no sistema
+## Requisitos funcionais presentes no sistema:
 
-* []
-* []
-* []
-* []
-* []
-* []
+* [] SEO - (Search Engine Optimization) - Motor de busca bastante otimizado e rapído;
+* [] USER STORY - (Usuário dev fazer login a acessar o sistema);
+* [] Usuário deve conseguir modificar carrinho de compra - (Alterar quantidade de produtos);
+* [] Usuário deve conseguir finalizar o pedido - (Ter um ou mais produtos adicionados no carrinho e ou paletas de cores variantes);
+* [] Usuário deve conseguir fazer o pagamento do pedido - (Adicionando o cartão de crédito ou qualquer um outro meio de pagamento);
+* [] Usuário deve conseguir gerenciar diferentes endereços de entrega - (Alterando há cada entrega e ou de acordo com a localização desejada);
+* [] Usuário deve conseguir visualizar seus pedidos  - (Consultar as compras após realizadas e ou rastreamento em tempo real).
 
-## 🛠️ Construído com
+## 🛠️ Construído com as seguintes tecnologias
 
-Tecmoçogias utilizadas no desenvolvimento do projeto, Front-End, Back-End e ferramentas:
+Tecnologias utilizadas no desenvolvimento do projeto, Front-End, Back-End e ferramentas:
 
-* [React](https://react.dev/) - Tecnologia do Front-end mais utilizada;
-* [Node.Js](https://nodejs.org/pt) - Tecnologia utilizada na parte de Back-end;
-* [Typescript](https://www.typescriptlang.org/) - Tecnologia utilizada no Front-End;
-* [Next](https://nextjs.org/) - O Framework React para a Web;
-* [PostgreSQL](https://www.postgresql.org/) - Banco de dados SQL dos mais utilizado no mercado;
-* [Strype](https://stripe.com/br) - API de pagamento integrada para fazer compras e pagamentos On-line;
-* [Shadcn](https://ui.shadcn.com/) - A base para o seu sistema de design;
-* [Tailwind](https://tailwindcss.com/) - Framework web utilizando para estilizar de forma rápida.
+* [React](https://react.dev/) - O React é a biblioteca mais usada no mercado, para criar aplicações Web;
+* [Next](https://nextjs.org/) - O Framework React focado em performace e SEO. Muito utilizadas em aplicações Web modernas;
+* [Typescript](https://www.typescriptlang.org/) - Linguagem que adiciona tipagem ao Javascript, Muito usada em grande projetos paara trazer mais confiabilidade;
+* [Drizzle](https://orm.drizzle.team/) - ORM moderno para typescript, focado em segurança e performace. Ganhando espaço rapído no mercado;
+* [Node.Js](https://nodejs.org/pt) - Tecnologia mais usada no mercado global para criação e construção de aplicações Web;
+* [PostgreSQL](https://www.postgresql.org/) - Banco de dados SQL que está no Top3, dos Bancos de Dados mais usados pelo mercado;
+* [Strype](https://stripe.com/br) - API de pagamento integrada para fazer compras e pagamentos On-line, em sites e APP de forma rápida e segura;
+* [Shadcn](https://ui.shadcn.com/) - Biblioteca de componentes React com Tailwind. Muito usada por seu visual moderno e acessível;
+* [Tailwind](https://tailwindcss.com/) - Framework web utilizando desenvolver interfaces, modernas e responsiva de forma acelerada e com alta qualidade.
 
 ## 🖇️ Colaborando
 
@@ -108,7 +110,7 @@ Você também pode ver a lista de todos os [colaboradores](https://github.com/us
 
 ## 📄 Licença
 
-Este projeto está sob a licença (LICENÇA MIT) - veja o arquivo [LICENSE.MIT](https://choosealicense.com/licenses/mit/) para detalhes.
+Este projeto está sob a licença (LICENÇA MIT) - veja o arquivo [LICENSE.MIT](https://github.com/nvm-sh/nvm/blob/master/LICENSE.md) para detalhes.
 
 ## 🎁 Expressões de gratidão
 
