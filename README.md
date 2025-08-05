@@ -61,7 +61,7 @@ Adicione notas adicionais sobre como implantar isso em um sistema ativo
 ## 🗓️ Etapas de desenvolvimento do projeto:
 
 * [X] Setup do projeto e depenências iniciais;
-* [] Autenticação e tela inicial do projeto;
+* [X] Autenticação e tela inicial do projeto;
 * [] Catálogo de produtos;
 * [] Tela de produtos e carrinho de compras;
 * [] Integraçãocom stripe, Gatway de pagamanto;
@@ -69,8 +69,8 @@ Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
 ## Requisitos funcionais presentes no sistema:
 
-* [] SEO - (Search Engine Optimization) - Motor de busca bastante otimizado e rapído;
-* [] USER STORY - (Usuário dev fazer login a acessar o sistema);
+* [] SEO - (Search Engine Optimization) - Motor de busca bastante otimizado e rapído, que permite suas buscas aparecer to topo das paginas iniciais dos navegadores;
+* [] USER STORY - (Usuário deve fazer login a acessar o sistema);
 * [] Usuário deve conseguir modificar carrinho de compra - (Alterar quantidade de produtos);
 * [] Usuário deve conseguir finalizar o pedido - (Ter um ou mais produtos adicionados no carrinho e ou paletas de cores variantes);
 * [] Usuário deve conseguir fazer o pagamento do pedido - (Adicionando o cartão de crédito ou qualquer um outro meio de pagamento);
