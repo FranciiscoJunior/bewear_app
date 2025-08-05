@@ -1,9 +1,9 @@
-import crypto from "crypto";
+    import crypto from "crypto";
 
-import { db } from ".";
+    import { db } from ".";
 import { categoryTable, productTable, productVariantTable } from "./schema";
 
-const productImages = {
+    const productImages = {
     Mochila: {
         Preta: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Acesso%CC%81rios/1/78f9fa3b_c793_472a_b183_e32495033da2.jpg",
@@ -12,7 +12,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Acesso%CC%81rios/1/dacd9927_7287_4b14_a94f_b3f18c9c4d15.jpg",
         ],
     },
-
     "Meia Alta": {
         Branca: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Acesso%CC%81rios/2/52c14d96_66fb_4b5e_b8a9_6b6cf21fb448.jpg",
@@ -21,7 +20,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Acesso%CC%81rios/2/b38172d0_067a_4f03_975d_3c1c10cfc5f4.jpg",
         ],
     },
-
     "Boné Nocta": {
         Preto: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Acesso%CC%81rios/3/41f38755_76ea_4630_ba49_59991c345513.jpg",
@@ -33,7 +31,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Acesso%CC%81rios/3/9bb87d7b_b388_42d8_b5ca_7761804d24f7.jpg",
         ],
     },
-
     "Boné Curvo": {
         Azul: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Acesso%CC%81rios/4/6f6b54d9_f06d_47da_b34a_0641a5e34fa4.jpg",
@@ -45,7 +42,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Acesso%CC%81rios/4/ca47bcd5_e418_422d_b85c_45d8245aed03.jpg",
         ],
     },
-
     "Shorts Active": {
         Preto: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Bermuda+%26+Shorts/1/2bd85c0d_d637_49f3_bc35_c6c7c0062b5f.jpg",
@@ -57,7 +53,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Bermuda+%26+Shorts/1/91674907_139b_41b1_95fa_3e570d4376f1.jpg",
         ],
     },
-
     "Shorts Core": {
         Verde: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Bermuda+%26+Shorts/2/6120253a_d8b3_453b_a0b5_3ca783ae9510.jpg",
@@ -69,7 +64,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Bermuda+%26+Shorts/2/e067a9e3_f9b4_4d81_8129_c90effc1038b.jpg",
         ],
     },
-
     "Shorts Challenger": {
         Marrom: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Bermuda+%26+Shorts/3/78253172_fe17_4add_b597_88c689a2af3f.jpg",
@@ -81,7 +75,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Bermuda+%26+Shorts/3/eda6b80f_1fba_4934_a242_0cd93b401677.jpg",
         ],
     },
-
     "Bermuda Premier": {
         Verde: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Bermuda+%26+Shorts/4/7a8d5bd9_0de8_4247_9374_aadce84042ea.jpg",
@@ -93,7 +86,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Bermuda+%26+Shorts/4/a7948f93_42ac_4363_92a7_e2b3f7754230.jpg",
         ],
     },
-
     "Calça Nike Club": {
         Bege: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Calc%CC%A7as/1/1cef0dc4_e296_4809_94b6_66cb3164aa43.jpg",
@@ -105,7 +97,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Calc%CC%A7as/1/e4d6bfa8_88b0_484e_8e07_5f5fc5e5cfbb.jpg",
         ],
     },
-
     "Calça Knit": {
         Preta: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Calc%CC%A7as/2/3e90bb34_eb11_4cc0_930a_f1a4dcb5a4a1.png",
@@ -117,7 +108,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Calc%CC%A7as/2/e5b271dd_1696_4ff0_8cc9_649b45ef2c88.jpg",
         ],
     },
-
     "Calça Brooklin": {
         Bege: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Calc%CC%A7as/3/18a2f43f_a0bb_4d7e_a626_27c2f3b58017.jpg",
@@ -129,7 +119,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Calc%CC%A7as/3/915f96a0_8714_42d7_8d2d_e897d5a9ce7a.jpg",
         ],
     },
-
     "Calça Jordan": {
         Verde: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Calc%CC%A7as/4/1805ffd2_5fb7_454b_b098_2b00902025f3.jpg",
@@ -141,7 +130,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Calc%CC%A7as/4/d626872b_35b1_4a96_b58a_ea5f7d6ceab7.jpg",
         ],
     },
-
     "Camiseta ACG": {
         Bege: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Camisetas/1/4f57e719_e120_4525_83d5_16955e27061b.png",
@@ -153,7 +141,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Camisetas/1/a8c7b41f_69f0_4894_994f_de01533d1161.jpg",
         ],
     },
-
     "Camiseta Run": {
         Preta: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Camisetas/2/67db843e_691c_44a6_87b6_f5e01a1bcafe.webp",
@@ -162,7 +149,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Camisetas/2/83ab03e1_6383_450b_b203_3509a00fdaf7.jpg",
         ],
     },
-
     "Camiseta Active": {
         Branca: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Camisetas/3/c222d1e5_7cd7_4794_b644_57f47c9d344c.jpg",
@@ -171,7 +157,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Camisetas/3/d4c0657c_c2c2_4356_a509_61cd9ecc4148.webp",
         ],
     },
-
     "Camiseta Nature": {
         Preta: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Camisetas/4/caa3015c_61b3_4315_86b1_cc62ab1d2fee.jpg",
@@ -180,7 +165,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Camisetas/4/d0e40dd5_2060_450e_a423_6e894bc0573f.webp",
         ],
     },
-
     "Corta Vento": {
         Preto: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Jaquetas+%26+Moletons/1/4e134ee9_ce18_4b32_a4ad_aa55026a38f9.jpg",
@@ -189,7 +173,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Jaquetas+%26+Moletons/1/74ab7c8c_7c54_4c49_8084_24a87fe0fc85.jpg",
         ],
     },
-
     "Jaqueta Windrunner": {
         Azul: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Jaquetas+%26+Moletons/2/79afe358_deb0_4309_8301_02a6e6aa6108.jpg",
@@ -198,7 +181,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Jaquetas+%26+Moletons/2/bc06d5b0_be4b_4c74_8c6e_8645ea7168bb.jpg",
         ],
     },
-
     "Jaqueta Style": {
         Marrom: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Jaquetas+%26+Moletons/3/06222020_01b8_4232_92f4_dc0c92bb25da.webp",
@@ -207,7 +189,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Jaquetas+%26+Moletons/3/97de604a_deef_4594_a5a6_f51c18c71216.jpg",
         ],
     },
-
     "Jaqueta Nike Club": {
         Azul: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Jaquetas+%26+Moletons/4/134c9642_f032_4c6e_84a8_68de99e3dcb7.jpg",
@@ -216,7 +197,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Jaquetas+%26+Moletons/4/d8d78682_c480_40b0_97a1_93ab201b3287.jpg",
         ],
     },
-
     "Tênis Nike Vomero": {
         Preto: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Te%CC%82nis/1/85dc96b6_1cef_43ec_8cef_40e3938ac7cf.jpg",
@@ -228,7 +208,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Te%CC%82nis/1/ac052fe0_60ce_4ce9_8b3c_fd5fb72eaf3b.jpg",
         ],
     },
-
     "Tênis Nike Panda": {
         Verde: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Te%CC%82nis/2/2156e314_9889_4bdc_962d_7350f66cdf7f.jpg",
@@ -240,7 +219,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Te%CC%82nis/2/6ad78a9f_14a9_4590_8e7c_9392d0523678.jpg",
         ],
     },
-
     "Tênis Nike Air Force": {
         Preto: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Te%CC%82nis/3/5daa00d9_afae_4125_a95c_fc71923b81c3.jpg",
@@ -249,7 +227,6 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Te%CC%82nis/3/e6da41fa_1be4_4ce5_b89c_22be4f1f02d4.jpg",
         ],
     },
-
     "Tênis Nike Dunk Low": {
         Branco: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Te%CC%82nis/4/4bc9c840_d8af_411a_9b72_a3f51f6dd3da.jpg",
@@ -261,50 +238,45 @@ const productImages = {
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Te%CC%82nis/4/bb4e381c_84ae_4ced_814f_8553afc6eacf.jpg",
         ],
     },
-};
+    };
 
-function generateSlug(name: string): string {
+    function generateSlug(name: string): string {
     return name
         .toLowerCase()
         .replace(/[^a-z0-9\s-]/g, "")
         .replace(/\s+/g, "-")
         .trim();
-}
+    }
 
-const categories = [
+    const categories = [
     {
         name: "Acessórios",
         description: "Mochilas, bonés, meias e outros acessórios",
     },
-
     {
         name: "Bermuda & Shorts",
         description: "Bermudas e shorts para todas as ocasiões",
     },
-
     {
         name: "Calças",
         description: "Calças casuais e esportivas",
     },
-
     {
         name: "Camisetas",
         description: "Camisetas casuais e esportivas",
     },
-
     {
         name: "Jaquetas & Moletons",
         description: "Jaquetas, corta-ventos e moletons",
     },
-
     {
         name: "Tênis",
         description: "Tênis casuais e esportivos",
     },
-];
+    ];
 
-const products = [
-  // Acessórios
+    const products = [
+    // Acessórios
     {
         name: "Mochila",
         description:
@@ -315,7 +287,6 @@ const products = [
         { color: "Branca", price: 12999 },
         ],
     },
-
     {
         name: "Meia Alta",
         description: "Meia alta de algodão, confortável e durável.",
@@ -325,7 +296,6 @@ const products = [
         { color: "Preta", price: 1999 },
         ],
     },
-
     {
         name: "Boné Nocta",
         description: "Boné Nocta com design moderno e ajuste confortável.",
@@ -336,7 +306,6 @@ const products = [
         { color: "Azul", price: 8999 },
         ],
     },
-
     {
         name: "Boné Curvo",
         description: "Boné com aba curva, estilo clássico e versátil.",
@@ -348,7 +317,7 @@ const products = [
         ],
     },
 
-  // Bermuda & Shorts
+    // Bermuda & Shorts
     {
         name: "Shorts Active",
         description:
@@ -360,7 +329,6 @@ const products = [
         { color: "Verde", price: 6999 },
         ],
     },
-
     {
         name: "Shorts Core",
         description: "Shorts casual confortável, perfeito para o dia a dia.",
@@ -371,7 +339,6 @@ const products = [
         { color: "Azul", price: 5999 },
         ],
     },
-
     {
         name: "Shorts Challenger",
         description:
@@ -383,7 +350,6 @@ const products = [
         { color: "Bege", price: 7499 },
         ],
     },
-
     {
         name: "Bermuda Premier",
         description:
@@ -396,7 +362,7 @@ const products = [
         ],
     },
 
-  // Calças
+    // Calças
     {
         name: "Calça Nike Club",
         description:
@@ -408,7 +374,6 @@ const products = [
         { color: "Vinho", price: 15999 },
         ],
     },
-
     {
         name: "Calça Knit",
         description:
@@ -420,7 +385,6 @@ const products = [
         { color: "Azul", price: 12999 },
         ],
     },
-
     {
         name: "Calça Brooklin",
         description:
@@ -432,7 +396,6 @@ const products = [
         { color: "Preta", price: 13999 },
         ],
     },
-
     {
         name: "Calça Jordan",
         description:
@@ -457,7 +420,6 @@ const products = [
         { color: "Branca", price: 6999 },
         ],
     },
-
     {
         name: "Camiseta Run",
         description:
@@ -468,7 +430,6 @@ const products = [
         { color: "Azul", price: 5999 },
         ],
     },
-
     {
         name: "Camiseta Active",
         description:
@@ -479,7 +440,6 @@ const products = [
         { color: "Preta", price: 5499 },
         ],
     },
-
     {
         name: "Camiseta Nature",
         description:
@@ -502,7 +462,6 @@ const products = [
         { color: "Branco", price: 19999 },
         ],
     },
-
     {
         name: "Jaqueta Windrunner",
         description:
@@ -513,7 +472,6 @@ const products = [
         { color: "Bege", price: 22999 },
         ],
     },
-
     {
         name: "Jaqueta Style",
         description:
@@ -524,7 +482,6 @@ const products = [
         { color: "Cinza", price: 17999 },
         ],
     },
-
     {
         name: "Jaqueta Nike Club",
         description: "Jaqueta Nike Club com qualidade premium e design atemporal.",
@@ -547,7 +504,6 @@ const products = [
         { color: "Azul", price: 79999 },
         ],
     },
-
     {
         name: "Tênis Nike Panda",
         description: "Tênis Nike com design Panda icônico, confortável e estiloso.",
@@ -558,7 +514,6 @@ const products = [
         { color: "Preto", price: 69999 },
         ],
     },
-
     {
         name: "Tênis Nike Air Force",
         description:
@@ -569,7 +524,6 @@ const products = [
         { color: "Branco", price: 89999 },
         ],
     },
-
     {
         name: "Tênis Nike Dunk Low",
         description: "Tênis Nike Dunk Low com design retrô e conforto moderno.",
@@ -580,9 +534,9 @@ const products = [
         { color: "Azul", price: 75999 },
         ],
     },
-];
+    ];
 
-async function main() {
+    async function main() {
     console.log("🌱 Iniciando o seeding do banco de dados...");
 
     try {
@@ -655,22 +609,21 @@ async function main() {
             slug: generateSlug(`${productData.name}-${variantData.color}`),
             });
         }
-    }
+        }
 
-    console.log("✅ Seeding concluído com sucesso!");
+        console.log("✅ Seeding concluído com sucesso!");
         console.log(
-            `📊 Foram criadas ${categories.length} categorias, ${
-                products.length
-            } produtos com ${products.reduce(
-                (acc, p) => acc + p.variants.length,
-                0,
-            )} variantes.`,
+        `📊 Foram criadas ${categories.length} categorias, ${
+            products.length
+        } produtos com ${products.reduce(
+            (acc, p) => acc + p.variants.length,
+            0,
+        )} variantes.`,
         );
-
     } catch (error) {
         console.error("❌ Erro durante o seeding:", error);
         throw error;
     }
-}
+    }
 
-main().catch(console.error);
+    main().catch(console.error);
