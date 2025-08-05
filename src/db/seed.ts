@@ -1,7 +1,7 @@
     import crypto from "crypto";
 
     import { db } from ".";
-import { categoryTable, productTable, productVariantTable } from "./schema";
+    import { categoryTable, productTable, productVariantTable } from "./schema";
 
     const productImages = {
     Mochila: {
@@ -626,4 +626,4 @@ import { categoryTable, productTable, productVariantTable } from "./schema";
     }
     }
 
-    main().catch(console.error);
+main().catch(console.error);
