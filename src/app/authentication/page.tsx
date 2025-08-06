@@ -25,6 +25,6 @@ const Authentication = async () => {
         </div>
         </>
     );
-    };
+};
 
 export default Authentication;

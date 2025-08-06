@@ -1,6 +1,6 @@
-    "use client";
+"use client";
 
-    import { zodResolver } from "@hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -161,4 +161,4 @@ import { authClient } from "@/lib/auth-client";
     );
     };
 
-    export default SignUpForm;
+export default SignUpForm;
