@@ -86,9 +86,11 @@
         provider: "google",
         });
     };
-    return (
+
+return (
         <>
         <Card className="w-full">
+            
             <CardHeader>
             <CardTitle>Entrar</CardTitle>
             <CardDescription>Faça login para continuar.</CardDescription>
@@ -164,6 +166,6 @@
         </Card>
         </>
     );
-    };
+};
 
-    export default SignInForm;
+export default SignInForm;

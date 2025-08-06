@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
+// Adjust the import path as needed; for example, if Header is in src/components/common/header.tsx:
+import { Header } from "../components/cammon/header";
 
 const Home = () => {
     return (
-        <div>
-            <Button>Bootcamp</Button>
-        </div>
+        <>
+            <Header />
+        </>
     );
 };
 
