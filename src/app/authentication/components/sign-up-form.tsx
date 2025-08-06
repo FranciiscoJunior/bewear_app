@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import z from "zod";
 
-    import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
@@ -63,19 +63,24 @@ import { authClient } from "@/lib/auth-client";
         email: values.email,
         password: values.password,
         fetchOptions: {
-            onSuccess: () => {
+
+        onSuccess: () => {
             router.push("/");
-            },
+        },
+
             onError: (error) => {
             if (error.error.code === "USER_ALREADY_EXISTS") {
                 toast.error("E-mail já cadastrado.");
+
                 return form.setError("email", {
                 message: "E-mail já cadastrado.",
                 });
+
             }
-            toast.error(error.error.message);
+
+                toast.error(error.error.message);
+                },
             },
-        },
         });
     }
 
