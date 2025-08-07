@@ -1,9 +1,9 @@
-    import crypto from "crypto";
+import crypto from "crypto";
 
-    import { db } from ".";
-    import { categoryTable, productTable, productVariantTable } from "./schema";
+import { db } from ".";
+import { categoryTable, productTable, productVariantTable } from "./schema";
 
-    const productImages = {
+const productImages = {
     Mochila: {
         Preta: [
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Acesso%CC%81rios/1/78f9fa3b_c793_472a_b183_e32495033da2.jpg",
@@ -238,9 +238,9 @@
         "https://fsc-projects-static.s3.us-east-1.amazonaws.com/BEWEAR/products/Te%CC%82nis/4/bb4e381c_84ae_4ced_814f_8553afc6eacf.jpg",
         ],
     },
-    };
+};
 
-    function generateSlug(name: string): string {
+function generateSlug(name: string): string {
     return name
         .toLowerCase()
         .replace(/[^a-z0-9\s-]/g, "")
@@ -248,7 +248,7 @@
         .trim();
     }
 
-    const categories = [
+const categories = [
     {
         name: "Acessórios",
         description: "Mochilas, bonés, meias e outros acessórios",
@@ -273,9 +273,9 @@
         name: "Tênis",
         description: "Tênis casuais e esportivos",
     },
-    ];
+];
 
-    const products = [
+const products = [
     // Acessórios
     {
         name: "Mochila",
@@ -534,9 +534,9 @@
         { color: "Azul", price: 75999 },
         ],
     },
-    ];
+];
 
-    async function main() {
+async function main() {
     console.log("🌱 Iniciando o seeding do banco de dados...");
 
     try {
@@ -624,6 +624,6 @@
         console.error("❌ Erro durante o seeding:", error);
         throw error;
     }
-    }
+}
 
 main().catch(console.error);
