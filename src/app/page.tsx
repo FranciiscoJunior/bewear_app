@@ -1,8 +1,11 @@
+import { desc } from "drizzle-orm";
 import Image from "next/image";
 
 import CategorySelector from "@/components/cammon/category-selector";
+import Footer from "@/components/cammon/footer";
 import ProductList from "@/components/cammon/product-list";
 import { db } from "@/db";
+import { productTable } from "@/db/schema";
 
 import { Header } from "../components/cammon/header";
 
@@ -12,6 +15,13 @@ const Home = async () => {
             variants: true,
         },
     });
+
+    const newlyCreatedProducts = await db.query.productTable.findMany({
+        orderBy: [desc(productTable.createdAt)],
+        with: {
+            variants: true,
+        }
+    })
 
     const categories = await db.query.categoryTable.findMany({});
 
@@ -33,7 +43,7 @@ const Home = async () => {
                 <ProductList products={products} title="Mais vendidos" />
 
                 <div className="px-5">
-
+                    <CategorySelector categories={categories}/>
                 </div>
 
             <div className="px-5">
@@ -46,7 +56,10 @@ const Home = async () => {
                 className="h-auto w-full"
                 />
             </div>
-            </div>
+
+                <ProductList products={newlyCreatedProducts} title="Novos produtos" />
+            <Footer/>
+        </div>
         </>
     );
 };

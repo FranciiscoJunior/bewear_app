@@ -13,7 +13,7 @@ const CategorySelector = ({categories }: CategorySelectorProps) => {
                 {categories.map((category) => {
                     <Button
                     key={category.id}
-                    variant="ghost" 
+                    variant="ghost"
                     className="rounded-full bg-white text-xs font-semibold"
                     >
                         {category.name}
