@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { format } from "path";
 
 import { productTable, productVariantTable } from "@/db/schema";
-import { formatCentsToBRL } from "@/healpers/money";
+import { formatCentsToBRL } from "@/helpers/money";
 
 interface ProductItemProps {
     product: typeof productTable.$inferSelect & {
@@ -24,8 +23,8 @@ const ProductItem = ({ product }: ProductItemProps) => {
             />
 
             <div className="flex max-w-[200px] flex-col gap-1">
-                <p className="truncate text-sm font-mediun">{product.name}</p>
-                <p className="truncate text-xs text-mediun-foreground font-medium">{product.description}</p>
+                <p className="truncate text-sm font-medium">{product.name}</p>
+                <p className="truncate text-xs text-medium-foreground font-medium">{product.description}</p>
                 <p className="truncate text-sm font-semibold">{formatCentsToBRL(firstVariant.priceInCents)}</p>
             </div>
         </Link>
