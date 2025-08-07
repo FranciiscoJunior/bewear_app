@@ -164,6 +164,6 @@ import { authClient } from "@/lib/auth-client";
         </Card>
         </>
     );
-    };
+};
 
 export default SignUpForm;

@@ -119,4 +119,4 @@
         references: [productTable.id],
         }),
     }),
-    );
+);

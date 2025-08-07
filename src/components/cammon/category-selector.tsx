@@ -22,6 +22,6 @@
         </div>
         </div>
     );
-    };
+};
 
-    export default CategorySelector;
+export default CategorySelector;
