@@ -8,31 +8,26 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
-
   socialProviders: {
-        google: {
-            clientId: process.env.GOOGLE_CLIENT_ID as string,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-      },
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    },
   },
-
   database: drizzleAdapter(db, {
-    provider: "pg", // or "pg" or "mysql"
+    provider: "pg",
     schema,
   }),
-    user: {
-      modelName: "userTable",
-    },
-
-    session: {
-      modelName: "sessionTable",
-    },
-
-    account: {
-      modelName: "accountTable",
-    },
-
-    verification: {
-      modelName: "verificationTable",
-    },
+  user: {
+    modelName: "userTable",
+  },
+  session: {
+    modelName: "sessionTable",
+  },
+  account: {
+    modelName: "accountTable",
+  },
+  verification: {
+    modelName: "verificationTable",
+  },
 });
