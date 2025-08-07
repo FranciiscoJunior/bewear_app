@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import CategorySelector from "@/components/cammon/category-selector";
 import ProductList from "@/components/cammon/product-list";
 import { db } from "@/db";
 
@@ -11,6 +12,8 @@ const Home = async () => {
             variants: true,
         },
     });
+
+    const categories = await db.query.categoryTable.findMany({});
 
     return (
         <>
@@ -28,6 +31,10 @@ const Home = async () => {
                 </div>
 
                 <ProductList products={products} title="Mais vendidos" />
+
+                <div className="px-5">
+
+                </div>
 
             <div className="px-5">
                 <Image
