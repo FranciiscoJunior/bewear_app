@@ -66,7 +66,7 @@ import { Cart } from "./cart";
                         <LogOutIcon />
                         </Button>
                     </div>
-                    </>
+                </>
                 ) : (
                     <div className="flex items-center justify-between">
                     <h2 className="font-semibold">Olá. Faça seu login!</h2>
