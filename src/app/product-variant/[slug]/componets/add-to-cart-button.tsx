@@ -16,7 +16,7 @@ const AddToCartButton = ({
     quantity,
 }: AddToCartButtonProps) => {
     const queryClient = useQueryClient();
-    const { mutate, isPeding } = useMutation ({
+    const { mutate, isPending } = useMutation({
         mutationKey: ["addProductToCart", productVariantId, quantity],
         mutationFn: () =>
             addProductToCart({
@@ -24,13 +24,13 @@ const AddToCartButton = ({
                 quantity,
             }),
             onSuccess: () => {
-                queryClient.invalidateQueries({queryKey: ["cart"]});
-            }
+                queryClient.invalidateQueries({queryKey: ["cart"] });
+            },
     });
     return (
-        <Button className="rounded-full" size="lg" variant="outline" disabled={isPeding} onClick={() => mutate()}>
+        <Button className="rounded-full" size="lg" variant="outline" disabled={isPending} onClick={() => mutate()}>
 
-            {isPeding &&  <Loader2 className="animate-spin" />}
+            {isPending &&  <Loader2 className="animate-spin" />}
             Adicionar à sacola
         </Button>
     );
