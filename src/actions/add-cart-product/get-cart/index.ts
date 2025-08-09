@@ -1,53 +1,50 @@
-"use server";
+    "use server";
 
-import { headers } from "next/headers";
+    import { headers } from "next/headers";
 
-import { db } from "@/db";
-import { cartTable } from "@/db/schema";
-import { auth } from "@/lib/auth";
+    import { db } from "@/db";
+    import { cartTable } from "@/db/schema";
+    import { auth } from "@/lib/auth";
 
-export const getCart = async () => {
+    export const getCart = async () => {
     const session = await auth.api.getSession({
-        headers: await  headers(),
+        headers: await headers(),
     });
-
     if (!session?.user) {
-        throw new Error ("Unauthorized");
+        throw new Error("Unauthorized");
     }
-
     const cart = await db.query.cartTable.findFirst({
         where: (cart, { eq }) => eq(cart.userId, session.user.id),
         with: {
-            items: {
+        items: {
+            with: {
+            productVariant: {
                 with: {
-                    productVariant: {
-                        with: {
-                            product: true,
-                        },
-                    },
+                product: true,
                 },
             },
+            },
+        },
         },
     });
-
     if (!cart) {
         const [newCart] = await db
-            .insert(cartTable)
-            .values({
-                userId: session.user.id,
-            })
-            .returning();
+        .insert(cartTable)
+        .values({
+            userId: session.user.id,
+        })
+        .returning();
         return {
-            ...newCart,
-            items: [],
-            totalPriceInCents: 0,
+        ...newCart,
+        items: [],
+        totalPriceInCents: 0,
         };
     }
-    return (
+    return {
         ...cart,
-        totalPriceInCents: cart.item.reduce(
-            (acc, item) => acc + item.productVariant.priceInCents * item.quantidady,
-            0,
+        totalPriceInCents: cart.items.reduce(
+        (acc, item) => acc + item.productVariant.priceInCents * item.quantity,
+        0,
         ),
-    ),
+    };
 };

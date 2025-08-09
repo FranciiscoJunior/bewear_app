@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 
 import { productVariantTable } from "@/db/schema";
 
@@ -15,13 +14,17 @@ const VariantSelector = ({
     selectedVariantSlug,
     variants,
 }: VariantSelectorProps) => {
-    const { slung } = useParams();
     return (
         <div className="flex items-center gap-4">
             {variants.map((variant) => (
                 <Link href={`/product-variant/${variant.slug}`}
                 key={variant.id}
-                className={slung == variant.slug ? "border-primary rounded-xl border-2" : ""}
+
+                className={
+                    selectedVariantSlug === variant.slug
+                    ? "border-primary rounded-xl border-2"
+                    : ""
+                }
                 >
                     <Image
                         width={68}
