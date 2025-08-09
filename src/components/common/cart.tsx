@@ -1,3 +1,5 @@
+"use client";
+
 import { ShoppingBasketIcon } from "lucide-react";
 
 import { Button } from "../ui/button";
@@ -11,7 +13,7 @@ export const Cart = () => {
                     <ShoppingBasketIcon/>
                 </Button>
             </SheetTrigger>
-            
+
             <SheetContent></SheetContent>
         </Sheet>
     );
