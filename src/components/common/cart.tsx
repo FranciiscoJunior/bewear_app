@@ -32,25 +32,26 @@
         </SheetTrigger>
         <SheetContent>
             <SheetHeader>
-            <SheetTitle>Carrinho</SheetTitle>
+                <SheetTitle>Carrinho</SheetTitle>
             </SheetHeader>
 
-            <div className="flex h-full flex-col px-5 pb-5">
+        <div className="flex h-full flex-col px-5 pb-5">
             <div className="flex h-full max-h-full flex-col overflow-hidden">
                 <ScrollArea className="h-full">
                 <div className="flex h-full flex-col gap-8">
                     {cart?.items.map((item) => (
-                    <CartItem
-                        key={item.id}
-                        id={item.id}
-                        productName={item.productVariant.product.name}
-                        productVariantName={item.productVariant.name}
-                        productVariantImageUrl={item.productVariant.imageUrl}
-                        productVariantPriceInCents={
-                        item.productVariant.priceInCents
-                        }
-                        quantity={item.quantity}
-                    />
+                        <CartItem
+                            key={item.id}
+                            id={item.id}
+                            productVariantId={item.productVariant.id}
+                            productName={item.productVariant.product.name}
+                            productVariantName={item.productVariant.name}
+                            productVariantImageUrl={item.productVariant.imageUrl}
+                            productVariantPriceInCents={
+                            item.productVariant.priceInCents
+                            }
+                            quantity={item.quantity}
+                        />
                     ))}
                 </div>
                 </ScrollArea>

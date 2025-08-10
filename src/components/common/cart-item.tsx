@@ -7,10 +7,13 @@ import { removeProductFromCart } from "@/actions/remove-cart-product";
 import { formatCentsToBRL } from "@/helpers/money";
 
 import { Button } from "../ui/button";
+import { addProductToCart } from "@/actions/add-cart-product";
+import { decreaseCartProductQuantity } from "@/actions/decrease-cart-product-quantity";
 
     interface CartItemProps {
     id: string;
     productName: string;
+    productVariantId: string;
     productVariantName: string;
     productVariantImageUrl: string;
     productVariantPriceInCents: number;
@@ -20,15 +23,33 @@ import { Button } from "../ui/button";
     const CartItem = ({
     id,
     productName,
+    productVariantId,
     productVariantName,
     productVariantImageUrl,
     productVariantPriceInCents,
     quantity,
     }: CartItemProps) => {
+
         const queryClient = useQueryClient();
         const removeProductFromCartMutation = useMutation({
             mutationKey: ["remove-cart-product"],
             mutationFn: () => removeProductFromCart({productVariantId: id}),
+            onSuccess: () => {
+                queryClient.invalidateQueries({ queryKey: ["cart"]});
+            },
+        });
+
+        const decreaseCartProductQuantityMutation = useMutation ({
+            mutationKey: ["decrease-cart-product-quantity"],
+            mutationFn: () => decreaseCartProductQuantity({ cartItemId: id})
+            onSuccess: () => {
+                queryClient.invalidateQueries({ queryKey: ["cart"]});
+            },
+        });
+
+        const increaseCartProductQuantityMutation = useMutation ({
+            mutationKey: ["increase-cart-product-quantity"],
+            mutationFn: () => addProductToCart({ productVariantId: quantity: 1 }),
             onSuccess: () => {
                 queryClient.invalidateQueries({ queryKey: ["cart"]});
             },
@@ -44,6 +65,23 @@ import { Button } from "../ui/button";
                 },
             });
         };
+
+        const handleDecreaseQuantityClick = () => {
+            decreaseCartProductQuantityMutation.mutate(undefined, {
+                onSuccess: () => {
+                    toast.success("Quantidade de produto diminuida.");
+                },
+            });
+        };
+
+        const handleIncreaseQuantityClick = () => {
+            increaseCartProductQuantityMutation.mutate(undefined, {
+                onSuccess: () => {
+                    toast.success("Quantidade de produto aumentada.");
+                },
+            });
+        };
+
     return (
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -61,15 +99,14 @@ import { Button } from "../ui/button";
                 </p>
 
                     <div className="flex w-[100px] items-center justify-between rounded-lg border p-1">
-                        <Button className="h-4 w-4" variant="ghost" onClick={() => {}}>
+                        <Button className="h-4 w-4" variant="ghost" onClick={handleIncreaseQuantityClick}>
                         <MinusIcon />
                         </Button>
                         <p className="text-xs font-medium">{quantity}</p>
-                        <Button className="h-4 w-4" variant="ghost" onClick={() => {}}>
+                        <Button className="h-4 w-4" variant="ghost" onClick={handleIncreaseQuantityClick}>
                         <PlusIcon />
                         </Button>
                     </div>
-                    
                 </div>
             </div>
 
@@ -85,4 +122,4 @@ import { Button } from "../ui/button";
     );
 };
 
-    export default CartItem;
+export default CartItem;
