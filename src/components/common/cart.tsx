@@ -86,6 +86,4 @@
         </SheetContent>
         </Sheet>
     );
-    };
-
-    // SERVER ACTION
+};
