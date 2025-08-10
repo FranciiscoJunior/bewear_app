@@ -1,11 +1,10 @@
     "use client";
 
-    import { useQuery } from "@tanstack/react-query";
     import { ShoppingBasketIcon } from "lucide-react";
 
-    import { getCart } from "@/actions/get-cart";
     import { Button } from "@/components/ui/button";
     import { formatCentsToBRL } from "@/helpers/money";
+    import { useCart } from "@/hooks/queries/use-cart";
 
     import { ScrollArea } from "../ui/scroll-area";
     import { Separator } from "../ui/separator";
@@ -19,21 +18,19 @@
     import CartItem from "./cart-item";
 
     export const Cart = () => {
-    const { data: cart } = useQuery({
-        queryKey: ["cart"],
-        queryFn: () => getCart(),
-    });
+    const { data: cart } = useCart();
+
     return (
         <Sheet>
-        <SheetTrigger asChild>
-            <Button variant="outline" size="icon">
-            <ShoppingBasketIcon />
-            </Button>
-        </SheetTrigger>
-        <SheetContent>
-            <SheetHeader>
-                <SheetTitle>Carrinho</SheetTitle>
-            </SheetHeader>
+            <SheetTrigger asChild>
+                <Button variant="outline" size="icon">
+                <ShoppingBasketIcon />
+                </Button>
+            </SheetTrigger>
+                <SheetContent>
+                    <SheetHeader>
+                        <SheetTitle>Carrinho</SheetTitle>
+                    </SheetHeader>
 
         <div className="flex h-full flex-col px-5 pb-5">
             <div className="flex h-full max-h-full flex-col overflow-hidden">
