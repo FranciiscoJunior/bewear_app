@@ -1,12 +1,12 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-    import { MinusIcon, PlusIcon, TrashIcon } from "lucide-react";
-    import Image from "next/image";
+import { MinusIcon, PlusIcon, TrashIcon } from "lucide-react";
+import Image from "next/image";
 import { toast } from "sonner";
 
 import { removeProductFromCart } from "@/actions/remove-cart-product";
-    import { formatCentsToBRL } from "@/helpers/money";
+import { formatCentsToBRL } from "@/helpers/money";
 
-    import { Button } from "../ui/button";
+import { Button } from "../ui/button";
 
     interface CartItemProps {
     id: string;
@@ -59,6 +59,7 @@ import { removeProductFromCart } from "@/actions/remove-cart-product";
                 <p className="text-muted-foreground text-xs font-medium">
                     {productVariantName}
                 </p>
+
                     <div className="flex w-[100px] items-center justify-between rounded-lg border p-1">
                         <Button className="h-4 w-4" variant="ghost" onClick={() => {}}>
                         <MinusIcon />
@@ -68,8 +69,10 @@ import { removeProductFromCart } from "@/actions/remove-cart-product";
                         <PlusIcon />
                         </Button>
                     </div>
+                    
                 </div>
             </div>
+
             <div className="flex flex-col items-end justify-center gap-2">
                 <Button variant="outline" size="icon" onClick={handleDeleteClick}>
                 <TrashIcon />
@@ -80,6 +83,6 @@ import { removeProductFromCart } from "@/actions/remove-cart-product";
             </div>
         </div>
     );
-    };
+};
 
     export default CartItem;
