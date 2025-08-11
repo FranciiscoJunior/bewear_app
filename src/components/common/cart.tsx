@@ -1,6 +1,6 @@
     "use client";
 
-    import { ShoppingBasketIcon } from "lucide-react";
+    import { Link, ShoppingBasketIcon } from "lucide-react";
 
     import { Button } from "@/components/ui/button";
     import { formatCentsToBRL } from "@/helpers/money";
@@ -77,7 +77,11 @@
                     <p>{formatCentsToBRL(cart?.totalPriceInCents ?? 0)}</p>
                 </div>
 
-                <Button className="mt-5 rounded-full">Finalizar compra</Button>
+                <Button className="mt-5 rounded-full" asChild>
+                    <Link href="/cart/identification">
+                        Finalizar compra
+                    </Link>
+                </Button>
                 </div>
             )}
             </div>
