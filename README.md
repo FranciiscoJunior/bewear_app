@@ -62,8 +62,8 @@ Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
 * [X] Setup do projeto e depenências iniciais;
 * [X] Autenticação e tela inicial do projeto;
-* [] Catálogo de produtos;
-* [] Tela de produtos e carrinho de compras;
+* [X] Catálogo de produtos;
+* [X] Tela de produtos e carrinho de compras;
 * [] Integraçãocom stripe, Gatway de pagamanto;
 * [] Deploy do projeto para o Vercel, para o projeto ficar On-line.
 
