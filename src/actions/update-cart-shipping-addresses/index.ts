@@ -53,4 +53,4 @@
         .where(eq(cartTable.id, cart.id));
 
     return { success: true };
-    };
+};

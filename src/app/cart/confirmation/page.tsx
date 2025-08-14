@@ -3,12 +3,13 @@
 
     import Footer from "@/components/common/footer";
     import { Header } from "@/components/common/header";
+    import { Button } from "@/components/ui/button";
     import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
     import { db } from "@/db";
     import { auth } from "@/lib/auth";
 
     import CartSummary from "../components/cart-summary";
-    import { formatAddress } from "../healpes/addresses";
+    import { formatAddress } from "../helpers/address";
     import FinishOrderButton from "./components/finish-order-button";
 
     const ConfirmationPage = async () => {
@@ -47,24 +48,19 @@
         <div>
         <Header />
         <div className="space-y-4 px-5">
-
             <Card>
-                <CardHeader>
-                    <CardTitle>Identificação</CardTitle>
-                </CardHeader>
-
-                <CardContent className="space-y-6">
-                    <Card>
-
-                    <CardContent>
-                        <p className="text-sm">{formatAddress(cart.shippingAddress)}</p>
-                    </CardContent>
-                    
-                    </Card>
-                    <FinishOrderButton />
+            <CardHeader>
+                <CardTitle>Identificação</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+                <Card>
+                <CardContent>
+                    <p className="text-sm">{formatAddress(cart.shippingAddress)}</p>
                 </CardContent>
+                </Card>
+                <FinishOrderButton />
+            </CardContent>
             </Card>
-
             <CartSummary
             subtotalInCents={cartTotalInCents}
             totalInCents={cartTotalInCents}
@@ -77,7 +73,6 @@
                 imageUrl: item.productVariant.imageUrl,
             }))}
             />
-
         </div>
         <div className="mt-12">
             <Footer />
@@ -86,4 +81,4 @@
     );
     };
 
-    export default ConfirmationPage;
+export default ConfirmationPage;

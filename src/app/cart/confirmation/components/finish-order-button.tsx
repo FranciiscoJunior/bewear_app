@@ -1,11 +1,11 @@
-    "use client";
+"use client";
 
-    import { Loader2 } from "lucide-react";
-    import Image from "next/image";
-    import Link from "next/link";
-    import { useState } from "react";
+import { Loader2 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
-    import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
     import {
     Dialog,
     DialogContent,
@@ -13,7 +13,7 @@
     DialogFooter,
     DialogTitle,
     } from "@/components/ui/dialog";
-    import { useFinishOrder } from "@/hooks/mutations/use-finish-order";
+import { useFinishOrder } from "@/hooks/mutations/use-finish-order";
 
     const FinishOrderButton = () => {
     const [successDialogIsOpen, setSuccessDialogIsOpen] = useState(false);
@@ -67,6 +67,6 @@
         </Dialog>
         </>
     );
-    };
+};
 
 export default FinishOrderButton;

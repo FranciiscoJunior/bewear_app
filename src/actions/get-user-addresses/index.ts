@@ -28,4 +28,4 @@
         console.error("Erro ao buscar endereços:", error);
         throw new Error("Erro ao buscar endereços");
     }
-    }
+}

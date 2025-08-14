@@ -12,12 +12,12 @@
     import { auth } from "@/lib/auth";
 
     import {
-    CreateCheckoutSessionSchema,
+    createCheckoutSessionSchema,
     createCheckoutSessionSchema,
     } from "./schema";
 
     export const createCheckoutSession = async (
-    data: CreateCheckoutSessionSchema,
+    data: createCheckoutSessionSchema,
     ) => {
     if (!process.env.STRIPE_SECRET_KEY) {
         throw new Error("Stripe secret key is not set");

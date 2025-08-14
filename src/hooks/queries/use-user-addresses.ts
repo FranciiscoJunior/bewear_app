@@ -13,4 +13,4 @@
         queryFn: getUserAddresses,
         initialData: params?.initialData,
     });
-    };
+};
