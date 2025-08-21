@@ -5,19 +5,16 @@
     import Stripe from "stripe";
 
     import { db } from "@/db";
-    import {
-    orderItemTable,
-    orderTable,
-    } from "@/db/schema";
+    import { orderItemTable, orderTable } from "@/db/schema";
     import { auth } from "@/lib/auth";
 
     import {
-    createCheckoutSessionSchema,
+    CreateCheckoutSessionSchema,
     createCheckoutSessionSchema,
     } from "./schema";
 
     export const createCheckoutSession = async (
-    data: createCheckoutSessionSchema,
+    data: CreateCheckoutSessionSchema,
     ) => {
     if (!process.env.STRIPE_SECRET_KEY) {
         throw new Error("Stripe secret key is not set");
@@ -70,4 +67,4 @@
         }),
     });
     return checkoutSession;
-};
+    };

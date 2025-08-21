@@ -1,12 +1,12 @@
-"use server";
+    "use server";
 
-import { headers } from "next/headers";
+    import { headers } from "next/headers";
 
-import { db } from "@/db";
-import { cartTable } from "@/db/schema";
-import { auth } from "@/lib/auth";
+    import { db } from "@/db";
+    import { cartTable } from "@/db/schema";
+    import { auth } from "@/lib/auth";
 
-export const getCart = async () => {
+    export const getCart = async () => {
     const session = await auth.api.getSession({
         headers: await headers(),
     });
@@ -49,4 +49,4 @@ export const getCart = async () => {
         0,
         ),
     };
-};
+    };
