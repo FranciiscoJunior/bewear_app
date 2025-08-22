@@ -15,23 +15,23 @@
     SheetTitle,
     SheetTrigger,
     } from "../ui/sheet";
-import { Cart } from "./cart";
+    import { Cart } from "./cart";
 
     export const Header = () => {
     const { data: session } = authClient.useSession();
     return (
         <header className="flex items-center justify-between p-5">
-            <Link href="/">
-                <Image src="/logo.svg" alt="BEWEAR" width={100} height={26.14} />
-            </Link>
+        <Link href="/">
+            <Image src="/logo.svg" alt="BEWEAR" width={100} height={26.14} />
+        </Link>
 
-    <div className="flex items-center gap-4">
-        <Sheet>
+        <div className="flex items-center gap-3">
+            <Sheet>
             <SheetTrigger asChild>
-                    <Button variant="outline" size="icon">
-                    <MenuIcon />
-                    </Button>
-                </SheetTrigger>
+                <Button variant="outline" size="icon">
+                <MenuIcon />
+                </Button>
+            </SheetTrigger>
             <SheetContent>
                 <SheetHeader>
                 <SheetTitle>Menu</SheetTitle>
@@ -66,7 +66,7 @@ import { Cart } from "./cart";
                         <LogOutIcon />
                         </Button>
                     </div>
-                </>
+                    </>
                 ) : (
                     <div className="flex items-center justify-between">
                     <h2 className="font-semibold">Olá. Faça seu login!</h2>
@@ -79,9 +79,8 @@ import { Cart } from "./cart";
                 )}
                 </div>
             </SheetContent>
-        </Sheet>
-
-        <Cart/>
+            </Sheet>
+            <Cart />
         </div>
         </header>
     );

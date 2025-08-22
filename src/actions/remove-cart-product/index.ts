@@ -34,4 +34,4 @@
         throw new Error("Unauthorized");
     }
     await db.delete(cartItemTable).where(eq(cartItemTable.id, cartItem.id));
-};
+    };

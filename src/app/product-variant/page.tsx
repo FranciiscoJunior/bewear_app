@@ -1,92 +1,89 @@
-import { eq } from "drizzle-orm";
-import Image from "next/image";
-import { notFound } from "next/navigation";
+    import { eq } from "drizzle-orm";
+    import Image from "next/image";
+    import { notFound } from "next/navigation";
 
-import Footer from "@/components/common/footer";
-import { Header } from "@/components/common/header";
-import ProductList from "@/components/common/product-list";
-import { db } from "@/db";
-import { productTable, productVariantTable } from "@/db/schema";
-import { formatCentsToBRL } from "@/helpers/money";
+    import Footer from "@/components/common/footer";
+    import { Header } from "@/components/common/header";
+    import ProductList from "@/components/common/product-list";
+    import { db } from "@/db";
+    import { productTable, productVariantTable } from "@/db/schema";
+    import { formatCentsToBRL } from "@/helpers/money";
 
-import ProductActions from "./[slug]/componets/product-action";
-import VariantSelector from "./[slug]/componets/variant-select";
-interface ProductVariantPageProps {
+    import ProductActions from "./[slug]/componets/product-action";
+    import VariantSelector from "./[slug]/componets/variant-select";
+
+    interface ProductVariantPageProps {
     params: Promise<{ slug: string }>;
-}
-
-const ProductVariantPage = async ({ params }: ProductVariantPageProps) => {
-    const { slug } = await params;
-    const productVaraint = await db.query.productVariantTable.findFirst({
-    where: eq(productVariantTable.slug, slug),
-        with: { product: {
-            with: {
-                variants: true,
-            },
-        },
-    },
-});
-
-    if (!productVaraint) {
-        return notFound();
     }
 
-    const likelyProducts = await db.query.productTable.findMany({
-        where: eq(productTable.categoryId, productVaraint.productId),
+    const ProductVariantPage = async ({ params }: ProductVariantPageProps) => {
+    const { slug } = await params;
+    const productVariant = await db.query.productVariantTable.findFirst({
+        where: eq(productVariantTable.slug, slug),
         with: {
+        product: {
+            with: {
             variants: true,
+            },
+        },
         },
     });
+    if (!productVariant) {
+        return notFound();
+    }
+    const likelyProducts = await db.query.productTable.findMany({
+        where: eq(productTable.categoryId, productVariant.product.categoryId),
+        with: {
+        variants: true,
+        },
+    });
+    return (
+        <>
+        <Header />
+        <div className="flex flex-col space-y-6">
+            <Image
+            src={productVariant.imageUrl}
+            alt={productVariant.name}
+            sizes="100vw"
+            height={0}
+            width={0}
+            className="h-auto w-full object-cover"
+            />
 
-return(
-    <>
-        <Header/>
-            <div className="flex flex-col space-y-6">
-                    <Image
-                        src={productVaraint.imageUrl}
-                        alt={productVaraint.name}
-                        sizes="100vm"
-                        height={0}
-                        width={0}
-                        className="h-auto w-full object-cover"
-                    />
+            <div className="px-5">
+            <VariantSelector
+                selectedVariantSlug={productVariant.slug}
+                variants={productVariant.product.variants}
+            />
+            </div>
 
-                <div className="px-5">
-                    <VariantSelector
-                        selectedVariantSlug={productVaraint.slug}
-                        variants={productVaraint.product.variants}
-                    />
-                </div>
+            <div className="px-5">
+            {/* DESCRIÇÃO */}
+            <h2 className="text-lg font-semibold">
+                {productVariant.product.name}
+            </h2>
+            <h3 className="text-muted-foreground text-sm">
+                {productVariant.name}
+            </h3>
+            <h3 className="text-lg font-semibold">
+                {formatCentsToBRL(productVariant.priceInCents)}
+            </h3>
+            </div>
 
-                <div className="px-5">
-                    {/*Descrição*/}
-                    <h2 className="text-xl font-semibold">
-                        {productVaraint.product.name}
-                    </h2>
+            <ProductActions productVariantId={productVariant.id} />
 
-                    <h3 className="text-muted-foreground text-sm">
-                        {productVaraint.name}
-                    </h3>
+            <div className="px-5">
+            <p className="text-shadow-amber-600">
+                {productVariant.product.description}
+            </p>
+            </div>
 
-                    <h3 className="text-lg font-semibold">
-                        {formatCentsToBRL(productVaraint.priceInCents)}
-                    </h3>
-                </div>
+            <ProductList title="Talvez você goste" products={likelyProducts} />
 
-                <ProductActions productVariantId={productVaraint.id}/>
-
-                <div className="px-5">
-                    <p className="text-shadow-amber-600">
-                        {productVaraint.product.description}
-                    </p>
-                </div>
-
-                    <ProductList title="Talvez você goste" products={likelyProducts}/>
-
-                    <Footer/>
-                </div>
+            <Footer />
+        </div>
         </>
     );
-};
+    };
 
-export default ProductVariantPage;
+    export default ProductVariantPage;

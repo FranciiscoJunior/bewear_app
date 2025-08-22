@@ -71,4 +71,4 @@
     );
     };
 
-    export default IdentificationPage;
+export default IdentificationPage;

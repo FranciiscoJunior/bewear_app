@@ -1,4 +1,4 @@
-export const formatAddress = (address: {
+    export const formatAddress = (address: {
     recipientName: string;
     street: string;
     number: string;
@@ -7,9 +7,8 @@ export const formatAddress = (address: {
     city: string;
     state: string;
     zipCode: string;
-    
-}) => {
+    }) => {
     return `${address.recipientName} • ${address.street}, ${address.number}
         ${address.complement && `, ${address.complement}`}, ${address.neighborhood}
         , ${address.city} - ${address.state} • CEP: ${address.zipCode}`;
-};
+    };

@@ -44,7 +44,7 @@
         })
         .returning();
 
-    revalidatePath("/cart/identification");
+revalidatePath("/cart/identification");
 
-    return shippingAddress;
+return shippingAddress;
 };

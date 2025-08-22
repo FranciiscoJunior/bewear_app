@@ -1,6 +1,7 @@
     "use client";
 
-    import { Link, ShoppingBasketIcon } from "lucide-react";
+    import { ShoppingBasketIcon } from "lucide-react";
+    import Link from "next/link";
 
     import { Button } from "@/components/ui/button";
     import { formatCentsToBRL } from "@/helpers/money";
@@ -19,36 +20,35 @@
 
     export const Cart = () => {
     const { data: cart } = useCart();
-
     return (
         <Sheet>
-            <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                <ShoppingBasketIcon />
-                </Button>
-            </SheetTrigger>
-                <SheetContent>
-                    <SheetHeader>
-                        <SheetTitle>Carrinho</SheetTitle>
-                    </SheetHeader>
+        <SheetTrigger asChild>
+            <Button variant="outline" size="icon">
+            <ShoppingBasketIcon />
+            </Button>
+        </SheetTrigger>
+        <SheetContent>
+            <SheetHeader>
+            <SheetTitle>Carrinho</SheetTitle>
+            </SheetHeader>
 
-        <div className="flex h-full flex-col px-5 pb-5">
+            <div className="flex h-full flex-col px-5 pb-5">
             <div className="flex h-full max-h-full flex-col overflow-hidden">
                 <ScrollArea className="h-full">
                 <div className="flex h-full flex-col gap-8">
                     {cart?.items.map((item) => (
-                        <CartItem
-                            key={item.id}
-                            id={item.id}
-                            productVariantId={item.productVariant.id}
-                            productName={item.productVariant.product.name}
-                            productVariantName={item.productVariant.name}
-                            productVariantImageUrl={item.productVariant.imageUrl}
-                            productVariantPriceInCents={
-                            item.productVariant.priceInCents
-                            }
-                            quantity={item.quantity}
-                        />
+                    <CartItem
+                        key={item.id}
+                        id={item.id}
+                        productVariantId={item.productVariant.id}
+                        productName={item.productVariant.product.name}
+                        productVariantName={item.productVariant.name}
+                        productVariantImageUrl={item.productVariant.imageUrl}
+                        productVariantPriceInCents={
+                        item.productVariant.priceInCents
+                        }
+                        quantity={item.quantity}
+                    />
                     ))}
                 </div>
                 </ScrollArea>
@@ -78,9 +78,7 @@
                 </div>
 
                 <Button className="mt-5 rounded-full" asChild>
-                    <Link href="/cart/identification">
-                        Finalizar compra
-                    </Link>
+                    <Link href="/cart/identification">Finalizar compra</Link>
                 </Button>
                 </div>
             )}
@@ -88,4 +86,6 @@
         </SheetContent>
         </Sheet>
     );
-};
+    };
+
+    // SERVER ACTION
