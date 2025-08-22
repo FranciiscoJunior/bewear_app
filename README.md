@@ -65,9 +65,113 @@ Criando Seed.TS:
 ```
 npx tsx --env-file=.env src/db/seed.ts
 ```
-
+Repita:
 ```
 npx tsx src/db/seed.ts
+```
+
+```
+npx shadcn@2.9.2 add card form input
+```
+
+```
+npx shadcn@2.9.2 add tabs
+```
+
+```
+npm i better-auth@1.2.12
+```
+
+```
+npx @better-auth/cli@1.2.12 generate
+```
+
+```
+npx drizzle-kit push
+```
+
+```
+npx shadcn@2.9.2 add sonner
+```
+
+```
+npx shadcn@2.9.2 add sheet
+```
+
+```
+npx shadcn@2.9.2 add avatar
+```
+
+```
+npx drizzle-kit generate
+```
+
+```
+npx shadcn@2.9.2 add sheet
+```
+
+```
+npx drizzle-kit push
+```
+
+```
+npx drizzle-kit push
+```
+
+```
+npx drizzle-kit push
+```
+
+```
+npm i @tanstack/react-query@5.83.0
+```
+
+```
+npx shadcn@2.9.2 add scroll-area
+```
+
+```
+npx shadcn@2.9.2 add separator
+```
+
+```
+npx shadcn@2.9.2 add radio-group
+```
+
+```
+npm i react-number-format@5.4.4
+```
+
+```
+npx drizzle-kit studio
+```
+
+```
+npx drizzle-kit studio
+```
+
+```
+npx drizzle-kit push
+```
+
+```
+npx drizzle-kit studio
+```
+
+```
+npx shadcn@2.9.2 add dialog
+```
+
+```
+npx drizzle-kit studio
+```
+
+```
+npm i stripe@18.4.0
+```
+
+```
+npm i @stripe/stripe-js@7.7.0
 ```
 
 Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
