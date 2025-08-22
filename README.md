@@ -20,16 +20,54 @@ Dar exemplos
 
 Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
 
-Diga como essa etapa será:
+Instalando e criando as dependências iniciais do projeto:
 
 ```
-Dar exemplos
+npx create-next-app@15.4.1
 ```
 
-E repita:
+Instalação do Shadcn:
+```
+npx shadcn@2.9.2 add button
+```
+
+Instalando biblioteca do Tailwind CSS:
+```
+npm install -D prettier@3.6.2 prettier-plugin-tailwindcss@0.6.14
+```
+
+Instalando Eslint:
+```
+npm install --save-dev eslint-plugin-simple-import-sort@12.1.1
+```
+
+Instalando o ORM Drizzle:
+```
+npm i drizzle-orm@0.44.2 drizzle-seed@0.3.1 pg@8.16.3 dotenv@17.1.0
+```
+
+Criando e conectando o ORM:
+```
+npm i -D drizzle-kit@0.31.4 @types/pg@8.15.4 tsx@4.20.3
+```
+
+Fazendo push dos dados criados:
+```
+npx drizzle-kit push
+```
+
+Rodando e iniciando o Banco de Dados no navegador:
+```
+npx drizzle-kit studio
+```
+
+Criando Seed.TS:
+```
+npx tsx --env-file=.env src/db/seed.ts
+```
 
 ```
-Até finalizar
+npx tsx src/db/seed.ts
 ```
 
 Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
@@ -103,8 +141,8 @@ Nós usamos [SemVer](http://semver.org/) para controle de versão. Para as vers�
 
 Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 
-* **Um desenvolvedor** - *Trabalho Inicial* - [umdesenvolvedor](https://github.com/FranciiscoJunior)
-* **Fulano De Tal** - *Documentação* - [fulanodetal](https://github.com/linkParaPerfil)
+* **Felipe Rocha** - *Software Engineer - Professor* - [Felipe Rocha](https://github.com/felipemotarocha);
+* **Um desenvolvedor Front-End** - *Trabalho a partir de evento de tecnologia* - [Francisco Júnior](https://github.com/FranciiscoJunior);
 
 Você também pode ver a lista de todos os [colaboradores](https://github.com/usuario/projeto/colaboradores) que participaram deste projeto.
 

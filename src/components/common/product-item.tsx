@@ -45,4 +45,4 @@
     );
   };
 
-  export default ProductItem;
+export default ProductItem;

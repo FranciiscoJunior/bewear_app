@@ -51,4 +51,4 @@
     );
     };
 
-    export default ProductActions;
+export default ProductActions;

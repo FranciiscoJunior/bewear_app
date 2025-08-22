@@ -37,4 +37,4 @@
     );
     };
 
-    export default VariantSelector;
+export default VariantSelector;

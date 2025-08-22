@@ -54,6 +54,6 @@
         </div>
         </>
     );
-    };
+};
 
-    export default MyOrdersPage;
+export default MyOrdersPage;

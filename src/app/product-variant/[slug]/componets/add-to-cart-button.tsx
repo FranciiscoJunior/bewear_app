@@ -39,6 +39,6 @@
         Adicionar à sacola
         </Button>
     );
-    };
+};
 
-    export default AddToCartButton;
+export default AddToCartButton;
